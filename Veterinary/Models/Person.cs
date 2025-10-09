@@ -8,7 +8,7 @@ public abstract class Person
     public string Gender { get; protected set; }
     public string Address { get; protected set; }
     public string DocumentType { get; protected set; }
-    public int Document { get; protected set; }
+    public string Document { get; protected set; }
 
     protected Person(int id, 
         string name, 
@@ -16,7 +16,7 @@ public abstract class Person
         string gender, 
         string address, 
         string documentType, 
-        int document)
+        string document)
     {
         
         Id = id;
@@ -27,4 +27,11 @@ public abstract class Person
         DocumentType = documentType;
         Document = document;
     }
+
+    public void ChangeName(string name)
+    {
+        Name = name;
+    }
+
+
 }

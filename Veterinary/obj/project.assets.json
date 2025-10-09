@@ -8,24 +8,31 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/home/Coder/.nuget/packages/": {}
+    "C:\\Users\\ADMI2\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/Coder/RiderProjects/Veterinary-Poo/Veterinary/Veterinary.csproj",
+      "projectUniqueName": "C:\\Users\\ADMI2\\RiderProjects\\Veterinary-Poo\\Veterinary\\Veterinary.csproj",
       "projectName": "Veterinary",
-      "projectPath": "/home/Coder/RiderProjects/Veterinary-Poo/Veterinary/Veterinary.csproj",
-      "packagesPath": "/home/Coder/.nuget/packages/",
-      "outputPath": "/home/Coder/RiderProjects/Veterinary-Poo/Veterinary/obj/",
+      "projectPath": "C:\\Users\\ADMI2\\RiderProjects\\Veterinary-Poo\\Veterinary\\Veterinary.csproj",
+      "packagesPath": "C:\\Users\\ADMI2\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ADMI2\\RiderProjects\\Veterinary-Poo\\Veterinary\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/Coder/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\ADMI2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -38,6 +45,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -59,7 +71,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.120/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\ADMI2\\.dotnet\\sdk\\8.0.414/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,5 +1,6 @@
 using Veterinary.Interfaces;
 using Veterinary.Models;
+using Veterinary.Services;
 
 namespace Veterinary.Repositories;
 
@@ -11,9 +12,19 @@ public class OwnerRepository : IOwner
         return owner;
     }
 
-    public Owner UpdateName(Owner owner)
+    public Owner UpdateName(int id)
     {
-        throw new NotImplementedException();
+        var existingOwner = Databases.DataBase.Owners
+            .FirstOrDefault(o => o.Id == id);
+
+        if (existingOwner != null)
+        {
+            string newName = PersonServices.AskPersonNameValidation();
+            existingOwner.ChangeName(newName);
+            return existingOwner;
+        }
+
+        return null!;
     }
 
     public Owner UpdateBirthdate(Owner owner)

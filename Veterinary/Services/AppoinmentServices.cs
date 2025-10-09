@@ -1,6 +1,6 @@
 namespace Veterinary.Services;
 
-public class OwnerService
+public class AppoinmentServices
 {
     
 }

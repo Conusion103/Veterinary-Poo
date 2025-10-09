@@ -12,7 +12,7 @@ public class Owner : Person
         string gender, 
         string address, 
         string documentType, 
-        int document,
+        string document,
         string phoneNumber,
         string email,
         List<Pet> pets) : 

@@ -11,7 +11,7 @@ public class Veterinarian : Person
         string gender, 
         string address, 
         string documentType, 
-        int document, 
+        string document, 
         string phoneNumber, 
         string email,
         List<MedicalAppointment> appointments) 

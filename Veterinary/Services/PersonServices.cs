@@ -28,7 +28,7 @@ public class PersonServices
 
     private static string? AskBirthDate()
     {
-        Console.WriteLine("Enter Birthdate");
+        Console.WriteLine("Enter Birthdate DD/MM/YYYY");
         return Console.ReadLine().Trim();
     }
 
@@ -38,7 +38,7 @@ public class PersonServices
         DateOnly date;
         while (string.IsNullOrWhiteSpace(input) || !DateOnly.TryParse(input, out date))
         {
-            Console.WriteLine("Error! Enter valid birth date");
+            Console.WriteLine("Error! Enter valid birth date DD/MM/YYYY");
             input = Console.ReadLine();
         }
         return date;
@@ -127,7 +127,76 @@ public class PersonServices
         }
         return input;
     }
-    
+
+    private static string? AskPhoneNumber()
+    {
+        Console.WriteLine("Enter phone number");
+        return Console.ReadLine();
+    }
+
+    public static string PhoneNumberValidation()
+    {
+        string? input = AskPhoneNumber();
+        while (string.IsNullOrWhiteSpace(input))
+        {
+            Console.WriteLine("Error ! Enter valid phone number");
+            input = Console.ReadLine();
+        }
+        return input;
+    }
+
+    private static string? AskEmail()
+    {
+        Console.WriteLine("Enter email");
+        return Console.ReadLine();
+    }
+
+    public static string EmailValidation()
+    {
+        string? input = AskEmail();
+        while (string.IsNullOrWhiteSpace(input))
+        {
+            Console.WriteLine("Error ! Enter valid email");
+            input = Console.ReadLine();
+        }
+
+        return input;
+    }
+
+    public static int GetAge(DateOnly birthday)
+    {
+        var today = DateOnly.FromDateTime(DateTime.Today);
+
+        int age = today.Year - birthday.Year;
+        if (today < birthday.AddYears(age))
+        {
+            age--;
+        }
+        return age < 0 ? 0 : age;
+    }
+
+
+    public static T AskId<T>(List<T> persons) where T : Person
+    {
+        bool state = false;
+        int id = -1;
+        int amount = persons.Count();
+        while (!state || id < 0)
+        {
+            Console.WriteLine("Enter id");
+            state = int.TryParse(Console.ReadLine(), out id);
+            
+        }
+
+        var Object = persons.FirstOrDefault(p => p.Id == id);
+        return Object;
+
+
+
+    }
+
+
+
 }
 
 
