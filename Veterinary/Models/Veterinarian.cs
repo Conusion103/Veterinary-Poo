@@ -17,7 +17,6 @@ public class Veterinarian : Person
         List<MedicalAppointment> appointments) 
         : base(id, name, birthDate, gender, address, documentType, document)
     {
-        Appointments = appointments;
         PhoneNumber = phoneNumber;
         Email = email;
         Appointments = appointments;

@@ -2,13 +2,13 @@ namespace Veterinary.Models;
 
 public abstract class Person
 {
-    protected int Id { get; set; } 
-    protected string Name { get; set; }
-    protected DateOnly BirthDate { get; set; }
-    protected string Gender { get; set; }
-    protected string Address { get; set; }
-    protected string DocumentType { get; set; }
-    protected int Document { get; set; }
+    public int Id { get; protected set; } 
+    public string Name { get; protected set; }
+    public DateOnly BirthDate { get; protected set; }
+    public string Gender { get; protected set; }
+    public string Address { get; protected set; }
+    public string DocumentType { get; protected set; }
+    public int Document { get; protected set; }
 
     protected Person(int id, 
         string name, 
