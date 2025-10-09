@@ -73,7 +73,7 @@ public class OwnerRepository : IOwner
         throw new NotImplementedException();
     }
 
-    public Owner Get(int Id)
+    public Owner GetById(int Id)
     {
         throw new NotImplementedException();
     }

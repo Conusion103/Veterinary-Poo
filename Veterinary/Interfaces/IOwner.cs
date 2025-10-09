@@ -15,5 +15,5 @@ public interface IOwner
     Owner? UpdateEmail(Owner owner);
     Owner GetAll(List<Owner> owners);
     Owner Remove(int Id);
-    Owner Get(int Id);
+    Owner GetById(int Id);
 }
