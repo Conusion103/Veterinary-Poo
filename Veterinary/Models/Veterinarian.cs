@@ -21,6 +21,16 @@ public class Veterinarian : Person
         Email = email;
         Appointments = appointments;
     }
+    
+    public void ChangePhoneNumber(string phoneNumber)
+    {
+        PhoneNumber = phoneNumber;
+    }
+
+    public void ChangeEmail(string email)
+    {
+        Email = email;
+    }
 
 
     

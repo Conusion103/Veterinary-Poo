@@ -175,25 +175,43 @@ public class PersonServices
         return age < 0 ? 0 : age;
     }
 
+    public static bool IsEmptyListPerson<T>(List<T> people)
+    {
+        if (people.Count == 0)
+        {
+            Console.WriteLine("List is empty");
+            return true;
+        }
+        return false;
 
-    public static T AskId<T>(List<T> persons) where T : Person
+        ;
+    }
+
+    public static T? AskId<T>(List<T> persons) where T : Person
     {
         bool state = false;
         int id = -1;
-        int amount = persons.Count();
-        while (!state || id < 0)
+
+        if (!IsEmptyListPerson(persons))
         {
-            Console.WriteLine("Enter id");
-            state = int.TryParse(Console.ReadLine(), out id);
-            
+            while (!state || id < 0)
+            {
+                Console.WriteLine("Enter id");
+                state = int.TryParse(Console.ReadLine(), out id);
+            }
+
+            var obj = persons.FirstOrDefault(p => p.Id == id);
+            return obj;
         }
-
-        var Object = persons.FirstOrDefault(p => p.Id == id);
-        return Object;
-
-
-
+        return null;
     }
+
+    public static void RemovePerson<T>(int id, List<T> persons) where T : Person
+    {
+        persons.RemoveAll(p => p.Id == id);
+    }
+
+
 
 
 

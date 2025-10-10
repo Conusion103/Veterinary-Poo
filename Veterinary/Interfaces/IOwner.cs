@@ -13,7 +13,7 @@ public interface IOwner
     Owner UpdateDocument(Owner owner);
     Owner UpdatePhoneNumber(Owner owner);
     Owner? UpdateEmail(Owner owner);
-    Owner GetAll(List<Owner> owners);
-    Owner Remove(int Id);
-    Owner GetById(int Id);
+    void GetAll();
+    void Delete(int Id, List<Owner> owners);
+    string GetById();
 }

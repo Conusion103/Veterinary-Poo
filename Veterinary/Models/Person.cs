@@ -33,5 +33,30 @@ public abstract class Person
         Name = name;
     }
 
+    public void ChangeBirthDate(DateOnly birthDate)
+    {
+        BirthDate = birthDate;
+    }
+
+    public void ChangeGender(string gender)
+    {
+        Gender = gender;
+    }
+
+    public void ChangeAddress(string address)
+    {
+        Address = address;
+    }
+
+    public void ChangeDocumentType(string documentType)
+    {
+        DocumentType = documentType;
+    }
+
+    public void ChangeDocument(string document)
+    {
+        Document = document;
+    }
+    
 
 }

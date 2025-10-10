@@ -2,9 +2,9 @@ namespace Veterinary.Models;
 
 public class Owner : Person
 {
-    public string PhoneNumber { get; set; }
-    public string Email { get; set; }
-    public List<Pet> Pets { get; set; } = new List<Pet>();
+    public string PhoneNumber { get; private set; }
+    public string Email { get; private set; }
+    public List<Pet> Pets { get; private set; } = new List<Pet>();
 
     public Owner(int id, 
         string name, 
@@ -22,4 +22,15 @@ public class Owner : Person
         Email = email;
         Pets = pets;
     }
+
+    public void ChangePhoneNumber(string phoneNumber)
+    {
+        PhoneNumber = phoneNumber;
+    }
+
+    public void ChangeEmail(string email)
+    {
+        Email = email;
+    }
+
 }

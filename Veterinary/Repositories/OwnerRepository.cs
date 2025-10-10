@@ -12,69 +12,88 @@ public class OwnerRepository : IOwner
         return owner;
     }
 
-    public Owner UpdateName(int id)
+    public Owner UpdateName(Owner owner)
     {
-        var existingOwner = Databases.DataBase.Owners
-            .FirstOrDefault(o => o.Id == id);
-
-        if (existingOwner != null)
-        {
             string newName = PersonServices.AskPersonNameValidation();
-            existingOwner.ChangeName(newName);
-            return existingOwner;
-        }
+            owner.ChangeName(newName);
+            return owner;
 
-        return null!;
     }
 
     public Owner UpdateBirthdate(Owner owner)
     {
-        throw new NotImplementedException();
+        DateOnly newBirthdate = PersonServices.PersonBirthdateValidation();
+        owner.ChangeBirthDate(newBirthdate);
+        return owner;
     }
 
     public Owner UpdateGender(Owner owner)
     {
-        throw new NotImplementedException();
+        string gender = PersonServices.AskGender();
+        owner.ChangeGender(gender);
+        return owner;
+        
     }
 
     public Owner UpdateAddress(Owner owner)
     {
-        throw new NotImplementedException();
+        string address = PersonServices.AddressValidation();
+        owner.ChangeAddress(address);
+        return owner;
     }
 
     public Owner UpdateDocumentType(Owner owner)
     {
-        throw new NotImplementedException();
+        string documentType = PersonServices.AskTypeDocument();
+        owner.ChangeDocumentType(documentType);
+        return owner;
     }
 
     public Owner UpdateDocument(Owner owner)
     {
-        throw new NotImplementedException();
+        string document = PersonServices.DocumentValidation();
+        owner.ChangeDocument(document);
+        return owner;
     }
 
     public Owner UpdatePhoneNumber(Owner owner)
     {
-        throw new NotImplementedException();
+        string phoneNumber = PersonServices.PhoneNumberValidation();
+        owner.ChangePhoneNumber(phoneNumber);
+        return owner;
+        
     }
 
     public Owner? UpdateEmail(Owner owner)
     {
-        throw new NotImplementedException();
+        string email = PersonServices.EmailValidation();
+        owner.ChangeEmail(email);
+        return owner;
     }
     
 
-    public Owner GetAll(List<Owner> owners)
+    public void GetAll()
     {
-        throw new NotImplementedException();
+        if (Databases.DataBase.Owners != null)
+        {
+            foreach (var owner in Databases.DataBase.Owners)
+            {
+                Console.WriteLine(
+                    $"Id: {owner.Id} Name: {owner.Name} Birthdate: {owner.BirthDate} Gender: {owner.Gender} DocumentType: {owner.DocumentType} Document: {owner.Document}");
+            }
+        }
+    }
+    
+    public void Delete(int id, List<Owner> persons)
+    {
+        persons.RemoveAll(p => p.Id == id);
+        
+        
     }
 
-    public Owner Remove(int Id)
+    public string GetById()
     {
-        throw new NotImplementedException();
-    }
-
-    public Owner GetById(int Id)
-    {
-        throw new NotImplementedException();
+        Owner obj = PersonServices.AskId(Databases.DataBase.Owners);
+        return $"Id: {obj.Id} Name: {obj.Name} Birthdate: {obj.BirthDate} Gender: {obj.Gender} DocumentType: {obj.DocumentType} Document: {obj.Document}";
     }
 }
